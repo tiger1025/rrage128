@@ -43,6 +43,8 @@ function DrawPlayer(f)
 	pos.move = false;
 	if (iskey(KEY_A)) { pos.x-=f*pos.speed; pos.n = -1; pos.move = true; }
 	if (iskey(KEY_D)) { pos.x+=f*pos.speed; pos.n = 1; pos.move = true; }
+	if (iskey(KEY_W)) { pos.y-=f*pos.speed*0.6; pos.move = true; }
+	if (iskey(KEY_S)) { pos.y+=f*pos.speed*0.6; pos.move = true; }
 
 	if (pos.move)
 	{
