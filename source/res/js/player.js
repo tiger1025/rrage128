@@ -22,16 +22,19 @@ function DrawPlayer(f)
 	var x = pos.x + GetWidth()/2;
 	var y = pos.y + GetHeight()/2;
 
-	SetColor(255,0,0);
-	DrawRect(x-50,y-125,100,125);
-	SetColor(0,255,0);
-	FillRect(x-4,y-4,8,8);
+	//SetColor(255,0,0);
+	//DrawRect(x-50,y-125,100,125);
+	//SetColor(0,255,0);
+	//FillRect(x-4,y-4,8,8);
 
 	rexSave();
 	rexTranslate(x,y);
 
 	//Scale(0.5);
 	rx.scale(0.5*pos.n,0.5);
+	SetColor(0,0,0,0.4);
+	FillEllipse(-50,-15,100,30);
+
 	DrawImage(hand[Math.trunc(handTime)],-90,-250);
 	DrawImage(legs[Math.trunc(legTime)],-100,-250);
 

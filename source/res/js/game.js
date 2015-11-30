@@ -30,7 +30,7 @@ function Draw()
 	if (logoShowed)
 	{
 		rexSave();
-		rexTranslate(GetWidth()/2-980,-340);
+		rexTranslate(GetWidth()/2-980,GetHeight()/2-850);
 		Scale(2,2);
 		DrawImage(bg,0,0);
 		rexRestore();
