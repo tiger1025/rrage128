@@ -11,10 +11,21 @@ function InitPlayer()
 
 function DrawPlayer(f)
 {
-	DrawImage(hand[Math.trunc(handTime)],20,10);
-	DrawImage(legs[Math.trunc(legTime)],10,10);
-	legTime+=f*10;
+	var x = 200;
+	var y = 300;
+
+	SetColor(255,0,0);
+
+	rexSave();
+
+	Scale(0.5);
+	DrawImage(hand[Math.trunc(handTime)],x-90,y-250);
+	DrawImage(legs[Math.trunc(legTime)],x-100,y-250);
+
+	legTime+=f*12;
 	handTime+=f*4;
 	if (legTime>8) legTime=0;
 	if (handTime>2) handTime=0;
+
+	rexRestore();
 }

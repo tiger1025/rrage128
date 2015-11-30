@@ -44,6 +44,10 @@
 	function SetFontName(Name) { fontname = Name; }
 	function GetTime() { return otime; }
 	function RexClose() { window.close(); }
+	function Scale(f) { rx.scale(f,f); }
+	function rexRestore() { rx.restore(); }
+	function rexSave() { rx.save(); }
+	function rexTranslate(x,y) { rx.translate(x,y);  }
 	/*
 	function GetCheat(n) { if (n!=null) { return cheatext.substring(cheatext.length-n,n+1); } else { return cheatext; } } 
 	function IsCheat(text) { if (cheatext.substring(cheatext.length-text.length,text.length+1)==text) { return true; } else { return false; } }

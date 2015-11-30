@@ -13,6 +13,7 @@ function init()
 	setInterval("Draw()",20);
 	InitPlayer();
 	SetAudioVolume(menuSound,0.4);
+	//Scale(0.5);
 }
 
 // draw
