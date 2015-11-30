@@ -7,11 +7,12 @@ function init()
 	RexInit("game_canvas");
 	RexResize(GetScreenWidth(),GetScreenHeight());
 	InitKeyboard();
-	InitLogos();
 	menuSound = LoadAudio("res/sounds/menu.mp3");
+	InitLogos();
 	PlayAudio(menuSound,true);
-	SetAudioVolume(menuSound,0.5);
 	setInterval("Draw()",20);
+	InitPlayer();
+	SetAudioVolume(menuSound,0.4);
 }
 
 // draw
@@ -23,4 +24,8 @@ function Draw()
 	if (iskey(KEY_SPACE)) SetAudioVolume(menuSound,0);
 	FillRect(0,0,GetWidth(),GetHeight());
 	drawLogo(f);
+	if (logoShowed)
+	{
+		DrawPlayer(f);
+	}	
 }
