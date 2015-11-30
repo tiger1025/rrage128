@@ -38,6 +38,7 @@
 	function LoadAudio(path) { var sound = new Audio(); sound.src = path; return sound; }
 	function PlayAudio(audio,lp) { if (lp!=null) audio.loop = lp; audio.play(); }
 	function PauseAudio(audio) { audio.pause(); }
+	function StopAudio(audio) { audio.pause(); audio.currentTime=0; }
 	function SetAudioVolume(audio, vol) { audio.volume = vol; }
 	function GetMouseX() { return Math.round(MouseX); }
 	function GetMouseY() { return Math.round(MouseY); }

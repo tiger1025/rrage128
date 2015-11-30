@@ -20,6 +20,7 @@ function InitPlayer()
 	pos.move = false;
 	pos.speed = 200;
 	pos.sound = LoadAudio("res/sounds/footsteps.mp3");
+	pos.sword = LoadAudio("res/sounds/sword.mp3");
 	pos.dead = false;
 
 	for(var i=0; i<9; i++) legs[i] = LoadImage("res/img/player/leg"+(i+1)+".png"); // 201x251
@@ -109,7 +110,10 @@ function keyu(id)
 
 function attack()
 {
+	SetAudioVolume(pos.sword,0.4);
+	StopAudio(pos.sword);
 	console.log("kick");
+	PlayAudio(pos.sword,false);
 }
 
 function dist(x,y)
