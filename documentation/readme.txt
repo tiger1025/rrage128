@@ -6,4 +6,4 @@
 	WASD - Перемещение героем
 
 Авторы:
-	tiger1025 и valeron625
+	tiger1025 и valeron625(valdis_aaa)
