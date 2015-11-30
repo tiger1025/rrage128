@@ -8,7 +8,7 @@ function init()
 	RexResize(GetScreenWidth(),GetScreenHeight());
 	InitKeyboard();
 	menuSound = LoadAudio("res/sounds/menu.mp3");
-	PlayAudio(menuSound);
+	PlayAudio(menuSound,true);
 	SetAudioVolume(menuSound,0);
 	setInterval("Draw()",20);
 }
