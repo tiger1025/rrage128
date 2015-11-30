@@ -24,9 +24,10 @@ function Draw()
 	var f = DeltaTime();
 	SetColor(0,0,0);
 	//SetAudioVolume(menuSound,0);
-	if (iskey(KEY_SPACE)) SetAudioVolume(menuSound,0);
+	//if (iskey(KEY_SPACE)) SetAudioVolume(menuSound,0);
 	FillRect(0,0,GetWidth(),GetHeight());
 	drawLogo(f);
+	
 	if (logoShowed)
 	{
 		rexSave();
