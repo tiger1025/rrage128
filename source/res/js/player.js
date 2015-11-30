@@ -13,6 +13,7 @@ function InitPlayer()
 	pos.n = 1;
 	pos.move = false;
 	pos.speed = 200;
+	pos.sound = LoadAudio("res/sounds/footsteps.mp3");
 	for(var i=0; i<9; i++) legs[i] = LoadImage("res/img/player/leg"+(i+1)+".png"); // 201x251
 	for(var i=0; i<2; i++) hand[i] = LoadImage("res/img/player/hand"+(i+1)+".png"); // 201x251
 }
@@ -52,5 +53,10 @@ function DrawPlayer(f)
 		handTime+=f*4;
 		if (legTime>8) legTime=0;
 		if (handTime>2) handTime=0;
+		PlayAudio(pos.sound,true);
+	}
+	else
+	{
+		PauseAudio(pos.sound);
 	}
 }
