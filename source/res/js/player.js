@@ -11,8 +11,8 @@ function InitPlayer()
 
 function DrawPlayer(f)
 {
-	DrawImage(legs[Math.trunc(legTime)],10,10);
 	DrawImage(hand[Math.trunc(handTime)],20,10);
+	DrawImage(legs[Math.trunc(legTime)],10,10);
 	legTime+=f*10;
 	handTime+=f*4;
 	if (legTime>8) legTime=0;
