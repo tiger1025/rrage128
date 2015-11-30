@@ -12,6 +12,7 @@ function InitPlayer()
 	pos.y = 0;
 	pos.n = 1;
 	pos.move = false;
+	pos.speed = 200;
 	for(var i=0; i<9; i++) legs[i] = LoadImage("res/img/player/leg"+(i+1)+".png"); // 201x251
 	for(var i=0; i<2; i++) hand[i] = LoadImage("res/img/player/hand"+(i+1)+".png"); // 201x251
 }
@@ -37,8 +38,8 @@ function DrawPlayer(f)
 	rexRestore();
 
 	pos.move = false;
-	if (iskey(KEY_A)) { pos.x-=f*100; pos.n = -1; pos.move = true; }
-	if (iskey(KEY_D)) { pos.x+=f*100; pos.n = 1; pos.move = true; }
+	if (iskey(KEY_A)) { pos.x-=f*pos.speed; pos.n = -1; pos.move = true; }
+	if (iskey(KEY_D)) { pos.x+=f*pos.speed; pos.n = 1; pos.move = true; }
 
 	if (pos.move)
 	{

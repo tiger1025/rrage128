@@ -1,6 +1,7 @@
 // start engine
 var logos = new Array(2);
 var menuSound;
+var bg;
 
 function init()
 {
@@ -12,6 +13,7 @@ function init()
 	PlayAudio(menuSound,true);
 	setInterval("Draw()",20);
 	InitPlayer();
+	bg = LoadImage("res/img/bg/bg1.jpg");
 	SetAudioVolume(menuSound,0.4);
 	//Scale(0.5);
 }
@@ -27,6 +29,11 @@ function Draw()
 	drawLogo(f);
 	if (logoShowed)
 	{
+		rexSave();
+		rexTranslate(GetWidth()/2-980,-340);
+		Scale(2,2);
+		DrawImage(bg,0,0);
+		rexRestore();
 		DrawPlayer(f);
 	}	
 }
