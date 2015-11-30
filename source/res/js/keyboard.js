@@ -5,8 +5,8 @@ function InitKeyboard()
 	document.onkeyup = OnKeyUp;
 }
 
-function OnKeyDown(e) { var charCode = (typeof e.which == "number") ? e.which : e.keyCode; keys[charCode] = true; }
-function OnKeyUp(e) { var charCode = (typeof e.which == "number") ? e.which : e.keyCode; keys[charCode] = false; }
+function OnKeyDown(e) { var charCode = (typeof e.which == "number") ? e.which : e.keyCode; keys[charCode] = true; keyd(charCode); }
+function OnKeyUp(e) { var charCode = (typeof e.which == "number") ? e.which : e.keyCode; keys[charCode] = false; keyu(charCode); }
 
 function iskey(num)
 {

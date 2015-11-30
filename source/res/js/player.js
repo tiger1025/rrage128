@@ -97,10 +97,25 @@ function DrawPlayer(f)
 	}
 }
 
+function keyd(id)
+{
+
+}
+
+function keyu(id)
+{
+	if (id == KEY_SPACE) attack();
+}
+
+function attack()
+{
+	console.log("kick");
+}
+
 function dist(x,y)
 {
 	var t = ogr.w/ogr.h;
 	y-=30;
-	console.log(Math.sqrt(x*x+(y*t)*(y*t)));
+	//console.log(Math.sqrt(x*x+(y*t)*(y*t)));
 	return Math.sqrt(x*x+(y*t)*(y*t))<ogr.w/2;
 }
