@@ -5,9 +5,12 @@ var legTime = 0;
 var handTime = 0;
 
 var pos = {};
+var ogr = {};
 
 function InitPlayer()
 {
+	ogr.w = 620*2.0;
+	ogr.h = 188*2.0;
 	pos.x = 0;
 	pos.y = 0;
 	pos.n = 1;
@@ -42,10 +45,13 @@ function DrawPlayer(f)
 	rexRestore();
 
 	pos.move = false;
-	if (iskey(KEY_A)) { pos.x-=f*pos.speed; pos.n = -1; pos.move = true; }
-	if (iskey(KEY_D)) { pos.x+=f*pos.speed; pos.n = 1; pos.move = true; }
-	if (iskey(KEY_W)) { pos.y-=f*pos.speed*0.6; pos.move = true; }
-	if (iskey(KEY_S)) { pos.y+=f*pos.speed*0.6; pos.move = true; }
+	m = {};
+	m.x = 0;
+	m.y = 0;
+	if (iskey(KEY_A)) if (dist(pos.x-f*pos.speed,pos.y)) { pos.x-=f*pos.speed; pos.n = -1; pos.move = true; }
+	if (iskey(KEY_D)) if (dist(pos.x+f*pos.speed,pos.y)) { pos.x+=f*pos.speed; pos.n = 1; pos.move = true; }
+	if (iskey(KEY_W)) if (dist(pos.x,pos.y-f*pos.speed*0.6)) { pos.y-=f*pos.speed*0.6; pos.move = true; }
+	if (iskey(KEY_S)) if (dist(pos.x,pos.y+f*pos.speed*0.6)) { pos.y+=f*pos.speed*0.6; pos.move = true; }
 
 	if (pos.move)
 	{
@@ -59,4 +65,12 @@ function DrawPlayer(f)
 	{
 		PauseAudio(pos.sound);
 	}
+}
+
+function dist(x,y)
+{
+	var t = ogr.w/ogr.h;
+	y-=30;
+	console.log(Math.sqrt(x*x+(y*t)*(y*t)));
+	return Math.sqrt(x*x+(y*t)*(y*t))<ogr.w/2;
 }
